@@ -1,0 +1,19 @@
+{
+	"id": "6f6176ce-c235-4053-83fc-73e4c995cabe",
+	"name": "QA",
+	"values": [
+		{
+			"key": "url",
+			"value": "https://jsonblob.com",
+			"enabled": true
+		},
+		{
+			"key": "bloglink",
+			"value": "https://jsonblob.com/api/jsonBlob/65735a56-7c7f-11e9-8e48-d5f52666439a",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-05-27T07:26:09.324Z",
+	"_postman_exported_using": "Postman/7.1.1"
+}

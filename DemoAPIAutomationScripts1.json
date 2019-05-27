@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "2175820c-1de8-456a-903b-9b94df902205",
+		"name": "DemoAPIAutomationScripts1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST-CreateBlog",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "39f7edc1-6152-4d24-b9c4-322e115053fd",
+						"exec": [
+							"var bloglink = postman.getResponseHeader(\"location\")",
+							"postman.setEnvironmentVariable(\"bloglink\", bloglink);",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"My first blog post :)\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/jsonBlob",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"jsonBlob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-Samplelog",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "70926309-d2cb-4b34-8617-eff494a56fbb",
+						"exec": [
+							"tests[\"Has Correct Text\"] = responseBody.has(\"My first blog post :)\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{bloglink}}",
+					"host": [
+						"{{bloglink}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
